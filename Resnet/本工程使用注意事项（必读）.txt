@@ -1,0 +1,6 @@
+1.data文件夹中储存要训练的图片，图片文件名中包含图片的标签信息，在训练图片前需要先将图片批量重命名，图片名格式见data_provider.py中的_get_labling_dict()函数（由于本项目需要1，2识别，所以图片名开头为’one‘、‘two’，使用者可根据自身需要进行修改）
+2.test.images 中存放图片的测试集
+3.工程文件的使用顺序：生成tfrecord（generate_tfrecord.py），训练（train.py），导出模型（export_inference_graph.py），预测（predict.py）
+4.关于训练部步数的问题：在train.py中可以规定训练步数，导出模型时需要在export_inference_graph.py中设定导出特定步数的模型
+5.train.py中的checkpoint_path对应的路径为预训练模型resnet_v1_50.ckpt的路径，如果不使用则填None(resnet_v1_50.ckpt可在本人网盘中下载 ，链接：https://pan.baidu.com/s/1afMHlenYcitWB2KxWVN8rg 
+提取码：ibz7)
